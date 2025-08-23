@@ -11,13 +11,13 @@ html {
 }
 
 body {
-  background: #0f0c29;
-  background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
-  color: #fff;
+  background: #050505;
+  color: #e5e5e5;
   overflow-x: hidden;
+  position: relative;
 }
 
-/* ✨ Animated Aurora Background */
+/* 🌌 Animated Fire/Aurora Background */
 body::before {
   content: "";
   position: fixed;
@@ -25,12 +25,13 @@ body::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: conic-gradient(from 90deg at 50% 50%, #00ffe0, #ff00ff, #ffae00, #00ffe0);
-  animation: aurora 15s linear infinite;
+  background: conic-gradient(from 180deg, #ff003c, #ff8a00, #ff003c, #ff8a00);
+  filter: blur(150px);
   opacity: 0.15;
+  animation: fireAurora 18s linear infinite;
   z-index: -2;
 }
-@keyframes aurora {
+@keyframes fireAurora {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
@@ -41,32 +42,29 @@ body::before {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(15, 15, 15, 0.6);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 100, 0, 0.4);
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 100;
-  animation: fadeDown 1s ease;
-}
-
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-50px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .glass-nav .logo {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(90deg,#00ffe0,#ff00ff,#ffae00);
+  background: linear-gradient(90deg, #ff003c, #ff8a00, #ffd500);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: glowPulse 3s infinite;
+  animation: flicker 3s infinite;
 }
-@keyframes glowPulse {
-  0%,100% { filter: drop-shadow(0 0 10px #00ffe0); }
-  50% { filter: drop-shadow(0 0 25px #ff00ff); }
+@keyframes flicker {
+  0%,19%,21%,23%,25%,54%,56%,100% {
+    opacity: 1;
+    text-shadow: 0 0 15px #ff003c, 0 0 35px #ff8a00;
+  }
+  20%,24%,55% { opacity: 0.6; }
 }
 
 .glass-nav ul {
@@ -74,13 +72,15 @@ body::before {
   gap: 2rem;
   list-style: none;
 }
-
 .glass-nav ul li a {
-  color: #fff;
+  color: #f0f0f0;
   font-weight: 600;
   text-decoration: none;
-  transition: 0.4s;
   position: relative;
+  transition: 0.3s;
+}
+.glass-nav ul li a:hover {
+  color: #ff8a00;
 }
 .glass-nav ul li a::after {
   content: "";
@@ -88,15 +88,15 @@ body::before {
   bottom: -5px;
   left: 0;
   width: 0;
-  height: 3px;
-  background: linear-gradient(90deg,#00ffe0,#ff00ff);
-  transition: width 0.4s ease;
+  height: 2px;
+  background: linear-gradient(90deg, #ff003c, #ff8a00);
+  transition: width 0.3s;
 }
 .glass-nav ul li a:hover::after {
   width: 100%;
 }
 
-/* HERO */
+/* SECTIONS */
 .section {
   min-height: 100vh;
   display: flex;
@@ -106,7 +106,7 @@ body::before {
   padding: 8rem 2rem;
   text-align: center;
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(50px);
   transition: all 1s ease;
 }
 .section.visible {
@@ -114,76 +114,70 @@ body::before {
   transform: translateY(0);
 }
 
+/* PROFILE IMAGE */
 .profile-img {
-  width: 220px;
+  width: 200px;
   border-radius: 50%;
-  border: 6px solid #00ffe0;
-  box-shadow: 0 0 50px #00ffe0, 0 0 70px #ff00ff;
-  animation: float 5s ease-in-out infinite, hueSpin 10s linear infinite;
+  border: 5px solid #ff8a00;
+  box-shadow: 0 0 40px #ff003c, 0 0 80px #ff8a00;
+  animation: float 6s ease-in-out infinite;
 }
 @keyframes float {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-30px); }
-}
-@keyframes hueSpin {
-  from { filter: hue-rotate(0deg); }
-  to { filter: hue-rotate(360deg); }
+  50% { transform: translateY(-25px); }
 }
 
+/* HERO TEXT */
 .glow-text {
   font-size: 4rem;
   margin: 1.5rem 0;
-  background: linear-gradient(90deg,#00ffe0,#ff00ff,#ffae00);
+  background: linear-gradient(90deg, #ff003c, #ff8a00, #ffd500);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: waveGlow 3s ease infinite;
+  text-shadow: 0 0 25px rgba(255, 50, 0, 0.8);
+  animation: glowWave 3s ease-in-out infinite;
 }
-@keyframes waveGlow {
-  0%,100% { letter-spacing: 2px; text-shadow: 0 0 10px #00ffe0; }
-  50% { letter-spacing: 10px; text-shadow: 0 0 30px #ff00ff; }
+@keyframes glowWave {
+  0%,100% { letter-spacing: 2px; }
+  50% { letter-spacing: 10px; }
 }
 
 .tagline {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   opacity: 0.8;
   margin-bottom: 2rem;
 }
 
-/* BUTTONS */
+/* FIRE BUTTONS */
 .btn {
   padding: 0.9rem 2rem;
   margin: 0.5rem;
-  border-radius: 50px;
-  background: linear-gradient(135deg,#00ffe0,#ff00ff,#ffae00);
+  border-radius: 40px;
+  background: linear-gradient(135deg, #ff003c, #ff8a00, #ffd500);
   color: #fff;
   font-weight: bold;
   text-decoration: none;
-  display: inline-block;
-  transition: 0.4s;
+  transition: 0.3s;
   position: relative;
+  overflow: hidden;
 }
 .btn:hover {
   transform: scale(1.15);
-  box-shadow: 0 0 25px #00ffe0, 0 0 45px #ff00ff;
+  box-shadow: 0 0 30px #ff003c, 0 0 60px #ff8a00;
 }
-.btn::after {
+.btn::before {
   content: "";
   position: absolute;
-  top: -5px; left: -5px; right: -5px; bottom: -5px;
-  border-radius: inherit;
-  border: 2px solid transparent;
-  background: linear-gradient(90deg,#00ffe0,#ff00ff) border-box;
-  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: xor;
-  animation: borderGlow 4s linear infinite;
+  top: 0; left: -100%;
+  width: 200%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: 0.6s;
 }
-@keyframes borderGlow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.btn:hover::before {
+  left: 100%;
 }
 
-/* TEAM */
+/* TEAM CARDS */
 .team-container {
   display: flex;
   flex-wrap: wrap;
@@ -193,58 +187,52 @@ body::before {
 }
 
 .team-card {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(15px);
-  padding: 2rem 1.5rem;
+  background: rgba(20,20,20,0.7);
+  border: 2px solid rgba(255,80,0,0.4);
   border-radius: 20px;
-  transition: 0.5s;
-  width: 250px;
+  padding: 2rem 1.5rem;
   text-align: center;
-  transform-style: preserve-3d;
-  transform: perspective(1000px) rotateY(15deg);
+  width: 260px;
+  transition: 0.4s;
 }
 .team-card img {
   width: 140px;
   border-radius: 50%;
-  border: 3px solid #00ffe0;
+  border: 3px solid #ff8a00;
   margin-bottom: 1rem;
-  transition: transform 0.5s;
 }
 .team-card:hover {
-  transform: perspective(1000px) rotateY(0deg) scale(1.08);
-  box-shadow: 0 0 40px #00ffe0, 0 0 60px #ff00ff;
-}
-.team-card:hover img {
-  transform: rotate(360deg);
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 0 30px #ff003c, 0 0 60px #ff8a00;
 }
 
 /* CONTACT */
 .contact-box {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(20px);
-  padding: 2.5rem;
+  background: rgba(30,30,30,0.8);
   border-radius: 25px;
-  margin-top: 2rem;
-  animation: pulseBox 3s infinite alternate;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(255,60,0,0.4);
+  transition: 0.4s;
 }
-@keyframes pulseBox {
-  from { box-shadow: 0 0 25px #00ffe0; }
-  to { box-shadow: 0 0 40px #ff00ff; }
+.contact-box:hover {
+  box-shadow: 0 0 50px #ff003c, 0 0 100px #ff8a00;
 }
 
 /* FOOTER */
 .footer {
-  background: rgba(0,0,0,0.7);
+  background: #0a0a0a;
   padding: 1rem;
   text-align: center;
-  border-top: 2px solid rgba(255,255,255,0.2);
+  border-top: 1px solid rgba(255,100,0,0.4);
 }
 .footer a {
-  color: #00ffe0;
+  color: #ff8a00;
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s;
 }
 .footer a:hover {
-  color: #ff00ff;
+  color: #ff003c;
 }
+
