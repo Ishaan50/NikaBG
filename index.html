@@ -1,155 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Nika BG — Community</title>
-  <link rel="icon" href="https://cdn.discordapp.com/avatars/1320695884270538792/f71f2e1e706c6581d2a675eef9bebe05.png">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nika BG</title>
   <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Nika BG — Blockman GO community, team, giveaways and socials.">
+  <script defer src="script.js"></script>
+  <link rel="icon" href="https://cdn.discordapp.com/avatars/1320695884270538792/f71f2e1e706c6581d2a675eef9bebe05.png">
 </head>
 <body>
-  <header class="topbar" role="banner">
-    <div class="brand" aria-hidden="false">
-      <img class="brand__logo" src="https://yt3.googleusercontent.com/DV74d__eBiFtrIu9W4zkS0P3lyiWC6fAQSQhVdr4W3JHiF1a1leOqsWcQn5Q_EHdiGL5w1BbBg=s160-c-k-c0x00ffffff-no-rj" alt="Nika BG logo">
-      <div>
-        <span class="brand__title">Nika BG</span>
-        <small class="brand__sub">Blockman GO Community</small>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Nika BG</div>
+    <ul>
+      <li><a href="#home">🏠 Home</a></li>
+      <li><a href="#team">👥 Team</a></li>
+      <li><a href="#videos">📺 Videos</a></li>
+      <li><a href="#achievements">🏆 Achievements</a></li>
+      <li><a href="#contact">📩 Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="profile-card">
+      <img src="https://yt3.googleusercontent.com/DV74d__eBiFtrIu9W4zkS0P3lyiWC6fAQSQhVdr4W3JHiF1a1leOqsWcQn5Q_EHdiGL5w1BbBg=s160-c-k-c0x00ffffff-no-rj" alt="Nika BG">
+      <h1>Nika BG</h1>
+      <p>🎮 Gamer • 🎥 Creator • 🚀 Community Leader</p>
+      <div class="social-buttons">
+        <a href="https://x.com/BgaNika51001" target="_blank" class="button tw">Twitter</a>
+        <a href="https://t.me/nika_BGA" target="_blank" class="button telegram">Telegram</a>
+        <a href="https://www.youtube.com/@Nikarogachov/videos" target="_blank" class="button youtube">YouTube</a>
+        <a href="https://www.tiktok.com/@nika_bg" target="_blank" class="button tiktok">TikTok</a>
+        <a href="https://discord.gg/34bEyS9s" target="_blank" class="button discord">Discord</a>
       </div>
     </div>
+  </section>
 
-    <nav class="nav" role="navigation" aria-label="Main">
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">☰</button>
-      <ul class="nav__list" id="navList">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#giveaway">Giveaway</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="top-controls">
-      <button id="themeToggle" class="icon-btn" aria-pressed="false" title="Toggle theme">🌓</button>
-      <a class="icon-btn subscribe" href="https://www.youtube.com/@Nikarogachov/videos" target="_blank" rel="noopener">▶ Subscribe</a>
+  <!-- Team Section -->
+  <section id="team" class="section">
+    <h2>🚀 Meet the Team</h2>
+    <div class="team-container">
+      <div class="team-card">
+        <img src="https://cdn.discordapp.com/avatars/1320695884270538792/f71f2e1e706c6581d2a675eef9bebe05.png" alt="Nika BG">
+        <h3>Nika BG</h3>
+        <p>🌟 Owner</p>
+      </div>
+      <div class="team-card">
+        <img src="https://cdn.discordapp.com/avatars/1204117273292308531/d1262d2ee51584e40f1d4cbd6fda6bed.png" alt="Legendery">
+        <h3>Legendery</h3>
+        <p>🌟 Co-Owner</p>
+      </div>
+      <div class="team-card">
+        <img src="https://cdn.discordapp.com/avatars/790155636615807029/e85a26f47b5428ae78bc4980262e33e5.png" alt="Shah BG">
+        <h3>Shah BG</h3>
+        <p>👮 CEO</p>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main id="main">
-    <!-- HERO -->
-    <section id="home" class="hero" role="region" aria-label="Home">
-      <div class="hero__card glass">
-        <img class="hero__avatar" src="https://yt3.googleusercontent.com/DV74d__eBiFtrIu9W4zkS0P3lyiWC6fAQSQhVdr4W3JHiF1a1leOqsWcQn5Q_EHdiGL5w1BbBg=s160-c-k-c0x00ffffff-no-rj" alt="Nika profile" loading="lazy">
-        <h1 class="hero__title">Nika BG</h1>
-        <p class="hero__meta">BlockmanGo ID: <strong>1002655</strong></p>
-
-        <div class="hero__actions">
-          <a class="btn btn--accent" href="https://discord.gg/34bEyS9s" target="_blank" rel="noopener">Join Discord</a>
-          <button class="btn" id="openGiveModal">Enter Giveaway</button>
-        </div>
-
-        <div class="socials">
-          <a class="chip tw" href="https://x.com/BgaNika51001" target="_blank" rel="noopener" aria-label="Twitter">X</a>
-          <a class="chip tg" href="https://t.me/nika_BGA" target="_blank" rel="noopener" aria-label="Telegram">Telegram</a>
-          <a class="chip yt" href="https://www.youtube.com/@Nikarogachov/videos" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
-          <a class="chip tt" href="https://www.tiktok.com/@nika_bg" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- GIVEAWAY (highlight card) -->
-    <section id="giveaway" class="section">
-      <div class="giveaway glass pulse" role="region" aria-label="Giveaway">
-        <div class="giveaway__left">
-          <img class="gc-logo" src="https://play-lh.googleusercontent.com/f3z5Lcf_JI-Ux58hGCR-KlFxAvMTGjzftny59yvCdarulH33J6nDBCpVgymVqTKzUso" alt="GCcube" loading="lazy">
-          <div class="give-count">300</div>
-        </div>
-        <div class="giveaway__body">
-          <h3>🎉 GCcube Giveaway</h3>
-          <p class="muted">One lucky winner — join now on our Discord!</p>
-          <div class="giveaway__cta">
-            <a class="btn btn--accent" href="https://discord.gg/5dWjm6Rv5V" target="_blank" rel="noopener">Join Giveaway</a>
-            <button class="btn" id="rulesBtn">Rules</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM -->
-    <section id="team" class="section">
-      <h2 class="section__title">Meet the Team</h2>
-      <p class="muted section__subtitle">Friends and leaders who run the server</p>
-
-      <div class="team-grid" role="list">
-        <!-- card example: data-* used by JS to populate modal -->
-        <article class="team-card glass" role="listitem" tabindex="0"
-                 data-name="Nika BG" data-role="Owner" data-bio="Passionate gamer and community leader."
-                 data-img="https://cdn.discordapp.com/avatars/1320695884270538792/f71f2e1e706c6581d2a675eef9bebe05.png"
-                 data-links='{"youtube":"https://www.youtube.com/channel/UCIVtaXV1bSfnrWs3Pmb87hw","discord":"https://discord.gg/SWMFR2Vk9R"}'>
-          <img class="team-card__img" loading="lazy" alt="Nika BG avatar" src="https://cdn.discordapp.com/avatars/1320695884270538792/f71f2e1e706c6581d2a675eef9bebe05.png">
-          <h3>Nika BG</h3>
-          <p class="muted">Owner</p>
-        </article>
-
-        <article class="team-card glass" role="listitem" tabindex="0"
-                 data-name="Legendery" data-role="Co-Owner" data-bio="Leader and helper for community events."
-                 data-img="https://cdn.discordapp.com/avatars/1204117273292308531/d1262d2ee51584e40f1d4cbd6fda6bed.png">
-          <img class="team-card__img" loading="lazy" alt="Legendery avatar" src="https://cdn.discordapp.com/avatars/1204117273292308531/d1262d2ee51584e40f1d4cbd6fda6bed.png">
-          <h3>Legendery</h3>
-          <p class="muted">Co-Owner</p>
-        </article>
-
-        <article class="team-card glass" role="listitem" tabindex="0"
-                 data-name="Shah BG" data-role="CEO" data-bio="Manages ops and keeps things running."
-                 data-img="https://cdn.discordapp.com/avatars/790155636615807029/e85a26f47b5428ae78bc4980262e33e5.png"
-                 data-links='{"youtube":"https://www.youtube.com/channel/UCrAAxRjUFykXZRmXBfTax3Q"}'>
-          <img class="team-card__img" loading="lazy" alt="Shah BG avatar" src="https://cdn.discordapp.com/avatars/790155636615807029/e85a26f47b5428ae78bc4980262e33e5.png">
-          <h3>Shah BG</h3>
-          <p class="muted">CEO</p>
-        </article>
-
-        <!-- add more cards easily -->
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2 class="section__title">Contact & Links</h2>
-      <div class="contact-grid">
-        <div class="contact-card glass">
-          <h4>Discord</h4>
-          <p class="muted">Best place to get community updates & support.</p>
-          <a class="chip" href="https://discord.gg/34bEyS9s" target="_blank" rel="noopener">Open Server</a>
-        </div>
-        <div class="contact-card glass">
-          <h4>Support</h4>
-          <p class="muted">Want to support? Subscribe on YouTube!</p>
-          <a class="chip" href="https://www.youtube.com/@Era-BGofficial" target="_blank" rel="noopener">YouTube</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div>🚀 Made with ❤️ by <strong>Ishaan</strong> · © <span id="year"></span></div>
-    <div class="footer-links">
-      <a href="#home">Home</a> · <a href="#team">Team</a> · <a href="#contact">Contact</a>
+  <!-- Featured Videos -->
+  <section id="videos" class="section">
+    <h2>📺 Featured Videos</h2>
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID3" frameborder="0" allowfullscreen></iframe>
     </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements" class="section">
+    <h2>🏆 Achievements</h2>
+    <div class="achievements-container">
+      <div class="achievement">🎉 10K+ Community Members</div>
+      <div class="achievement">🔥 1M+ Video Views</div>
+      <div class="achievement">🚀 Built a Growing Team</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>📩 Contact</h2>
+    <div class="contact-box">
+      <p>Want to connect with <strong>Nika BG?</strong></p>
+      <a href="https://discord.gg/34bEyS9s" target="_blank" class="discord-btn">Join Our Discord</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>🚀 Made with ❤️ by <span class="ishaan">Ishaan</span> | © <span id="year"></span></p>
   </footer>
 
-  <!-- Accessible modal (hidden) -->
-  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal__card" role="document">
-      <button class="modal__close" aria-label="Close modal" id="modalClose">✕</button>
-      <img id="modalImg" alt="" class="modal__img" />
-      <h3 id="modalTitle"></h3>
-      <p id="modalRole" class="muted"></p>
-      <p id="modalBio"></p>
-      <div id="modalLinks" class="modal__links"></div>
-    </div>
-  </div>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
