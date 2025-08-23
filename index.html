@@ -1,83 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-fx="particles">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nika BG</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nika BG — Official</title>
   <link rel="icon" href="https://cdn.discordapp.com/avatars/1320695884270538792/f71f2e1e706c6581d2a675eef9bebe05.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
+  <!-- Background FX -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="bg-glow" aria-hidden="true"></div>
 
-  <!-- Particle Background -->
-  <canvas id="particles"></canvas>
+  <!-- Skip link -->
+  <a href="#home" class="skip">Skip to content</a>
 
-  <!-- Navigation Bar -->
-  <nav class="glass-nav">
-    <div class="logo">🔥 Nika BG 🔥</div>
-    <ul>
-      <li><a href="#home">🏠 Home</a></li>
-      <li><a href="#team">👥 Team</a></li>
-      <li><a href="#contact">📩 Contact</a></li>
-    </ul>
+  <!-- Nav -->
+  <nav class="nav glass">
+    <div class="nav__left">
+      <a href="#home" class="logo">⚡ Nika BG</a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav__right">
+      <button id="themeToggle" class="btn icon" title="Toggle theme" aria-label="Toggle theme">🌗</button>
+      <button id="fxToggle" class="btn icon" title="Toggle effects" aria-label="Toggle effects">✨</button>
+      <button id="menuToggle" class="btn icon only-mobile" aria-label="Open menu">☰</button>
+    </div>
   </nav>
 
-  <!-- Home Section -->
-  <section id="home" class="section home-section">
-    <div class="hero">
-      <img src="https://yt3.googleusercontent.com/DV74d__eBiFtrIu9W4zkS0P3lyiWC6fAQSQhVdr4W3JHiF1a1leOqsWcQn5Q_EHdiGL5w1BbBg=s160-c-k-c0x00ffffff-no-rj" 
-           alt="Profile Picture" class="profile-img floating">
-      <h1 class="glow-text">✨ Nika BG ✨</h1>
-      <p class="tagline">BlockmanGo ID: <strong>1002655</strong></p>
+  <!-- Mobile drawer -->
+  <div id="drawer" class="drawer" aria-hidden="true">
+    <a href="#about">About</a>
+    <a href="#team">Team</a>
+    <a href="#videos">Videos</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+    <div class="drawer__socials">
+      <a href="https://x.com/BgaNika51001">🐦</a>
+      <a href="https://t.me/nika_BGA">💬</a>
+      <a href="https://www.youtube.com/@Nikarogachov/videos">▶</a>
+    </div>
+  </div>
 
-      <div class="social-buttons">
-        <a href="https://x.com/BgaNika51001" class="btn tw">🐦 Twitter</a>
-        <a href="https://t.me/nika_BGA" class="btn telegram">📲 Telegram</a>
-        <a href="https://www.youtube.com/@Nikarogachov/videos" class="btn youtube">▶️ YouTube</a>
-        <a href="https://www.tiktok.com/@nika_bg" class="btn tiktok">🎵 TikTok</a>
-        <a href="https://discord.gg/34bEyS9s" class="btn discord">💬 Discord</a>
+  <!-- Hero -->
+  <header id="home" class="hero container">
+    <div class="hero-bg"></div>
+    <img src="https://yt3.googleusercontent.com/DV74d__eBiFtrIu9W4zkS0P3lyiWC6fAQSQhVdr4W3JHiF1a1leOqsWcQn5Q_EHdiGL5w1BbBg=s160-c-k-c0x00ffffff-no-rj" 
+         alt="Nika BG avatar" class="hero__avatar floating">
+    <div class="hero__text">
+      <h1>I’m <span class="grad pulse">Nika BG</span></h1>
+      <p class="sub typewriter">🎮 Gamer • 🎥 Creator • 🚀 Leader • 🌍 Dreamer</p>
+      <div class="chips">
+        <a class="chip" href="https://x.com/BgaNika51001" target="_blank" rel="noopener">🐦 Twitter</a>
+        <a class="chip" href="https://t.me/nika_BGA" target="_blank" rel="noopener">💬 Telegram</a>
+        <a class="chip" href="https://www.youtube.com/@Nikarogachov/videos" target="_blank" rel="noopener">▶ YouTube</a>
+        <a class="chip" href="https://www.tiktok.com/@nika_bg" target="_blank" rel="noopener">🎵 TikTok</a>
+        <a class="chip" href="https://discord.gg/34bEyS9s" target="_blank" rel="noopener">💠 Discord</a>
+      </div>
+      <div class="actions">
+        <a class="btn primary glow" href="#videos">▶ Watch Videos</a>
+        <a class="btn ghost" href="#contact">✨ Join Community</a>
       </div>
     </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="section container fade reveal">
+    <h2>✨ About Me</h2>
+    <p>
+      Hi, I’m <strong>Nika BG</strong> — a passionate creator bringing together gamers, fans, and dreamers from across the globe.
+      From epic gaming moments to community building, I’m here to entertain, inspire, and grow with you.
+    </p>
   </section>
 
-  <!-- Team Section -->
-  <section id="team" class="section team-section">
-    <h2 class="glow-text">🚀 Meet the Team 🚀</h2>
-    <div class="team-container">
-      <div class="team-card">
-        <img src="https://cdn.discordapp.com/avatars/1320695884270538792/f71f2e1e706c6581d2a675eef9bebe05.png" alt="Nika">
+  <!-- Team -->
+  <section id="team" class="section container fade reveal">
+    <h2>🚀 Meet the Team</h2>
+    <div class="grid team">
+      <article class="card hover-glow">
+        <img src="https://cdn.discordapp.com/avatars/1320695884270538792/f71f2e1e706c6581d2a675eef9bebe05.png" alt="Nika BG">
         <h3>Nika BG</h3>
-        <p>🌟 Owner</p>
-      </div>
-      <div class="team-card">
+        <p class="muted">🌟 Owner</p>
+      </article>
+      <article class="card hover-glow">
         <img src="https://cdn.discordapp.com/avatars/1204117273292308531/d1262d2ee51584e40f1d4cbd6fda6bed.png" alt="Legendery">
         <h3>Legendery</h3>
-        <p>⚡ Co-Owner</p>
-      </div>
-      <div class="team-card">
+        <p class="muted">🌟 Co-Owner</p>
+      </article>
+      <article class="card hover-glow">
         <img src="https://cdn.discordapp.com/avatars/790155636615807029/e85a26f47b5428ae78bc4980262e33e5.png" alt="Shah BG">
         <h3>Shah BG</h3>
-        <p>👮 CEO</p>
+        <p class="muted">👮 CEO</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section id="videos" class="section container fade reveal">
+    <h2>📺 Featured Videos</h2>
+    <div class="grid videos">
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID1" title="Featured video 1" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID2" title="Featured video 2" allowfullscreen></iframe>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID3" title="Featured video 3" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section contact-section">
-    <h2 class="glow-text">📩 Contact Us</h2>
-    <div class="contact-box glass">
-      <p>Want to reach <strong>Nika BG?</strong></p>
-      <p>Join our official <a href="https://discord.gg/34bEyS9s" class="btn discord">Discord Server</a> now!</p>
+  <!-- Achievements -->
+  <section id="achievements" class="section container fade reveal">
+    <h2>🏆 Achievements</h2>
+    <div class="grid stats">
+      <div class="stat">
+        <span class="num" data-target="10000">0</span>
+        <p class="muted">Community Members</p>
+      </div>
+      <div class="stat">
+        <span class="num" data-target="1000000">0</span>
+        <p class="muted">Video Views</p>
+      </div>
+      <div class="stat">
+        <span class="num" data-target="100">0</span>
+        <p class="muted">Projects</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section container fade reveal">
+    <h2>📩 Contact</h2>
+    <div class="card contact">
+      <p>Want to connect with <strong>Nika BG</strong>?</p>
+      <a href="https://discord.gg/34bEyS9s" target="_blank" rel="noopener" class="btn primary glow">🚀 Join Our Discord</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>🚀 Made with ❤️ by <span class="ishaan">Ishaan</span> | 📺 
-      <a href="https://www.youtube.com/@Era-BGofficial" class="footer-link">Support on YouTube</a> | © <span id="year"></span> All rights reserved.
-    </p>
+    <div class="footer-links">
+      <a href="#about">About</a> •
+      <a href="#team">Team</a> •
+      <a href="#videos">Videos</a> •
+      <a href="#achievements">Achievements</a> •
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-socials">
+      <a href="https://x.com/BgaNika51001">🐦</a>
+      <a href="https://t.me/nika_BGA">💬</a>
+      <a href="https://www.youtube.com/@Nikarogachov/videos">▶</a>
+      <a href="https://discord.gg/34bEyS9s">💠</a>
+    </div>
+    <p>Made with ❤️ by <span class="ishaan">Ishaan</span> | © <span id="year">2025</span></p>
   </footer>
-
 </body>
 </html>
