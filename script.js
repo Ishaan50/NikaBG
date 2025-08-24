@@ -139,7 +139,7 @@
       { avatar: "https://yt3.ggpht.com/F9Dq5XM6mWi_QbZMxcoEF1Au0X3MN_1-C56h1QmV83WInphtJb9rV1khGKBwy-dXtau9T_V1=s88-c-k-c0x00ffffff-no-rj", name: "XxWarriorxX", quote: "Omg nika" },
       { avatar: "https://yt3.googleusercontent.com/1z95ZZmvi78xEx34s-zUyXa9ukDY23U1wTeNEb-xPmSpwUo67JJkU-t1dDk1P5MGQrPyO6_Znw=s160-c-k-c0x00ffffff-no-rj", name: "Legend Gamerz", quote: "Bots play better than you😭😭" },
       { avatar: "https://yt3.ggpht.com/E3PzjjRb98p0eYf6tyUTFGpdp9vlGpc-0bVJ28Btb0WOTJEaC3t3RfrBg7Yr7GhMY27ukfU7=s88-c-k-c0x00ffffff-no-rj", name: "Nidscef BG", quote: "nice" },
-      { avatar: "https://cdn.discordapp.com/embed/avatars/3.png", name: "Fan4", quote: "We love your content!" },
+      { avatar: "https://yt3.ggpht.com/uqpxg6u3HXte2UWndlYC_evglQtYBgn90XuUh7acZ_7dvVTdp6HXLO8x9qBQToxOOT_RHqjeuw=s88-c-k-c0x00ffffff-no-rj", name: "EntityBG", quote: "Top" },
       { avatar: "https://cdn.discordapp.com/embed/avatars/4.png", name: "Fan5", quote: "Always motivating 🚀" }
     ];
 
