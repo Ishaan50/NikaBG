@@ -158,7 +158,7 @@
       i = (i+1) % messages.length;
     }
     showMessage();
-    setInterval(showMessage, 1000); // change message every 1s
+    setInterval(showMessage, 4000); // change message every 4s
   })();
 
     // Mini Poll Box
