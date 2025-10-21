@@ -136,11 +136,11 @@
     if (!container) return;
 
     const messages = [
-      { avatar: "https://yt3.ggpht.com/F9Dq5XM6mWi_QbZMxcoEF1Au0X3MN_1-C56h1QmV83WInphtJb9rV1khGKBwy-dXtau9T_V1=s88-c-k-c0x00ffffff-no-rj", name: "XxWarriorxX", quote: "Omg nika" },
+      { avatar: "https://yt3.ggpht.com/k5aTN4scVZV9EO5LuX7pBoJA277eoQjM5njTV6R46AGopvln9Jhhhqh7kxUIP6k97jDFuu-0=s88-c-k-c0x00ffffff-no-rj", name: "XDino", quote: "Nika, are you going to the room to farm ratings?" },
       { avatar: "https://yt3.googleusercontent.com/1z95ZZmvi78xEx34s-zUyXa9ukDY23U1wTeNEb-xPmSpwUo67JJkU-t1dDk1P5MGQrPyO6_Znw=s160-c-k-c0x00ffffff-no-rj", name: "Legend Gamerz", quote: "Bots play better than you😭😭" },
-      { avatar: "https://yt3.ggpht.com/E3PzjjRb98p0eYf6tyUTFGpdp9vlGpc-0bVJ28Btb0WOTJEaC3t3RfrBg7Yr7GhMY27ukfU7=s88-c-k-c0x00ffffff-no-rj", name: "Nidscef BG", quote: "nice" },
+      { avatar: "https://yt3.ggpht.com/akEa0XEtivhwUVxqUA-BftISYmRnr3NmOvKT2U42j91n_6lxQHuZKy3DLgOMjTcAod9y4aMjIw=s88-c-k-c0x00ffffff-no-rj", name: "HeroBG", quote: "Bro make some video with me also" },
       { avatar: "https://yt3.ggpht.com/uqpxg6u3HXte2UWndlYC_evglQtYBgn90XuUh7acZ_7dvVTdp6HXLO8x9qBQToxOOT_RHqjeuw=s88-c-k-c0x00ffffff-no-rj", name: "EntityBG", quote: "Top" },
-      { avatar: "https://cdn.discordapp.com/embed/avatars/4.png", name: "Fan5", quote: "Always motivating 🚀" }
+      { avatar: "https://yt3.googleusercontent.com/WdjIP2wmEaHTR30adREVxpBmCU6Jyc4jzVNhsnRQExhkOMM3Jetn0mH3JaCSH5p3vfVcmkTz=s160-c-k-c0x00ffffff-no-rj", name: "Анатолій Гнатченко", quote: "Топ" }
     ];
 
     let i = 0;
