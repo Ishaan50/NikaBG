@@ -1,2 +1,1 @@
-# Nika BG offical Website
-##                    - Ishaan
+# Nika BG offical Website ###- Ishaan
