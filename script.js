@@ -130,36 +130,56 @@
   })();
 })();
 
-  // Fan Messages Rotator
-  (function fanMessages(){
-    const container = document.getElementById('fanMessages');
-    if (!container) return;
+// Fan Messages Rotator
+(function fanMessages() {
+  const container = document.getElementById('fanMessages');
+  if (!container) return;
 
-    const messages = [
-      { avatar: "https://yt3.ggpht.com/k5aTN4scVZV9EO5LuX7pBoJA277eoQjM5njTV6R46AGopvln9Jhhhqh7kxUIP6k97jDFuu-0=s88-c-k-c0x00ffffff-no-rj", name: "XDino", quote: "Nika, are you going to the room to farm ratings?" },
-      { avatar: "https://yt3.googleusercontent.com/1z95ZZmvi78xEx34s-zUyXa9ukDY23U1wTeNEb-xPmSpwUo67JJkU-t1dDk1P5MGQrPyO6_Znw=s160-c-k-c0x00ffffff-no-rj", name: "Legend Gamerz", quote: "Bots play better than you😭😭" },
-      { avatar: "https://yt3.ggpht.com/akEa0XEtivhwUVxqUA-BftISYmRnr3NmOvKT2U42j91n_6lxQHuZKy3DLgOMjTcAod9y4aMjIw=s88-c-k-c0x00ffffff-no-rj", name: "HeroBG", quote: "Bro make some video with me also" },
-      { avatar: "https://yt3.ggpht.com/uqpxg6u3HXte2UWndlYC_evglQtYBgn90XuUh7acZ_7dvVTdp6HXLO8x9qBQToxOOT_RHqjeuw=s88-c-k-c0x00ffffff-no-rj", name: "EntityBG", quote: "Top" },
-      { avatar: "https://yt3.googleusercontent.com/WdjIP2wmEaHTR30adREVxpBmCU6Jyc4jzVNhsnRQExhkOMM3Jetn0mH3JaCSH5p3vfVcmkTz=s160-c-k-c0x00ffffff-no-rj", name: "Анатолій Гнатченко", quote: "Топ" }
-    ];
+  const messages = [
+    { avatar: "https://yt3.ggpht.com/k5aTN4scVZV9EO5LuX7pBoJA277eoQjM5njTV6R46AGopvln9Jhhhqh7kxUIP6k97jDFuu-0=s88-c-k-c0x00ffffff-no-rj", name: "XDino", quote: "Nika, are you going to the room to farm ratings?" },
+    { avatar: "https://yt3.googleusercontent.com/1z95ZZmvi78xEx34s-zUyXa9ukDY23U1wTeNEb-xPmSpwUo67JJkU-t1dDk1P5MGQrPyO6_Znw=s160-c-k-c0x00ffffff-no-rj", name: "Legend Gamerz", quote: "Bots play better than you😭😭" },
+    { avatar: "https://yt3.ggpht.com/akEa0XEtivhwUVxqUA-BftISYmRnr3NmOvKT2U42j91n_6lxQHuZKy3DLgOMjTcAod9y4aMjIw=s88-c-k-c0x00ffffff-no-rj", name: "HeroBG", quote: "Bro make some video with me also" },
+    { avatar: "https://yt3.ggpht.com/uqpxg6u3HXte2UWndlYC_evglQtYBgn90XuUh7acZ_7dvVTdp6HXLO8x9qBQToxOOT_RHqjeuw=s88-c-k-c0x00ffffff-no-rj", name: "EntityBG", quote: "Top" },
+    { avatar: "https://yt3.googleusercontent.com/WdjIP2wmEaHTR30adREVxpBmCU6Jyc4jzVNhsnRQExhkOMM3Jetn0mH3JaCSH5p3vfVcmkTz=s160-c-k-c0x00ffffff-no-rj", name: "Анатолій Гнатченко", quote: "Топ" }
+  ];
 
-    let i = 0;
-    function showMessage(){
-      const m = messages[i];
-      container.innerHTML = `
-        <div class="fan-message">
-          <img src="${m.avatar}" class="fan-avatar" alt="${m.name}">
-          <div class="fan-text">
-            <h4 class="fan-name">${m.name}</h4>
-            <p class="fan-quote">"${m.quote}"</p>
-          </div>
+  let i = 0;
+
+  function showMessage() {
+    const m = messages[i];
+    container.innerHTML = `
+      <div class="fan-message">
+        <img src="${m.avatar}" class="fan-avatar" alt="${m.name}">
+        <div class="fan-text">
+          <h4 class="fan-name">${m.name}</h4>
+          <p class="fan-quote">"${m.quote}"</p>
         </div>
-      `;
-      i = (i+1) % messages.length;
-    }
-    showMessage();
-    setInterval(showMessage, 6000); // change message every 6s
-  })();
+      </div>
+    `;
+    container.style.display = "block";
+  }
+
+  function rotateMessage() {
+    // Hide the container first
+    container.style.opacity = "0";
+
+    // After fade-out delay (1s fade + 3s hidden = 4s total)
+    setTimeout(() => {
+      i = (i + 1) % messages.length;
+      showMessage();
+
+      // Reappear smoothly
+      setTimeout(() => {
+        container.style.opacity = "1";
+      }, 100);
+    }, 4000);
+  }
+
+  showMessage();
+
+  // Start rotation: visible for 6s, hidden for 4s = 10s cycle
+  setInterval(rotateMessage, 10000);
+})();
 
     // Mini Poll Box
   (function pollBox(){
