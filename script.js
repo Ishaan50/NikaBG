@@ -178,7 +178,7 @@
   showMessage();
 
   // Start rotation: visible for 6s, hidden for 4s = 10s cycle
-  setInterval(rotateMessage, 5000);
+  setInterval(rotateMessage, 10000);
 })();
 
     // Mini Poll Box
