@@ -170,7 +170,7 @@
 
       // Reappear smoothly
       setTimeout(() => {
-        container.style.opacity = "1";
+        container.style.opacity = "2";
       }, 100);
     }, 4000);
   }
