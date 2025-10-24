@@ -145,6 +145,9 @@
 
   let i = 0;
 
+  // Set up transition once
+  container.style.transition = "opacity 1s ease";
+
   function showMessage() {
     const m = messages[i];
     container.innerHTML = `
@@ -160,25 +163,26 @@
   }
 
   function rotateMessage() {
-    // Hide the container first
+    // Fade out smoothly
     container.style.opacity = "0";
 
-    // After fade-out delay (1s fade + 3s hidden = 4s total)
+    // Wait for fade out before changing content
     setTimeout(() => {
       i = (i + 1) % messages.length;
       showMessage();
 
-      // Reappear smoothly
+      // Fade in again
       setTimeout(() => {
-        container.style.opacity = "4";
-      }, 400);
-    }, 8000);
+        container.style.opacity = "1";
+      }, 100);
+    }, 1000); // matches transition time
   }
 
   showMessage();
+  container.style.opacity = "1";
 
-  // Start rotation: visible for 6s, hidden for 4s = 10s cycle
-  setInterval(rotateMessage, 10000);
+  // Every 8s change message
+  setInterval(rotateMessage, 8000);
 })();
 
     // Mini Poll Box
